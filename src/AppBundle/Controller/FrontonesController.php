@@ -17,13 +17,28 @@ class FrontonesController extends Controller
      * @param $page
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction($page)
+    public function listarAction($page)
     {
         if (!$this->isPosiblePage($page)) {
             throw new NotFoundHttpException('Número de página imposible de resolver');
         }
 
         return $this->render('', array('page' => $page));
+    }
+
+    public function listarFavoritosAction()
+    {
+
+    }
+
+    public function destalleAction($id)
+    {
+
+    }
+
+    public function buscarAction()
+    {
+
     }
 
     private function isPosiblePage($page)
