@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Catalogo_Ciudad")
+ * @ORM\Table(name="Catalogo_Barrio")
  */
-class Ciudad
+class Barrio
 
 {
     /**
@@ -22,7 +22,7 @@ class Ciudad
     /**
      * @ORM\Column(type="string", length=100)
      */
-    protected $nombre;
+    protected $desc;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -48,17 +48,17 @@ class Ciudad
     /**
      * @return string
      */
-    public function getNombre()
+    public function getDesc()
     {
-        return $this->nombre;
+        return $this->desc;
     }
 
     /**
-     * @param string $nombre
+     * @param string $desc
      */
-    public function setNombre($nombre)
+    public function setDesc($desc)
     {
-        $this->nombre = $nombre;
+        $this->desc = $desc;
     }
 
     /**
@@ -82,6 +82,6 @@ class Ciudad
      */
     public function __toString()
     {
-        return $this->getNombre();
+        return $this->getDesc();
     }
 }
