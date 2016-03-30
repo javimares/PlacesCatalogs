@@ -2,28 +2,33 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Opinion
+ * @ORM\Entity
+ * @ORM\Table(name="Catalogo_Opiniones")
  */
 class Opinion
 {
     /**
-     * @var integer
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var string
+     * @ORM\Column(type="text")
      */
     private $body;
 
     /**
-     * @var integer
+     * @ORM\Column(type="integer")
      */
     private $calif;
 
     /**
-     * @var \AppBundle\Entity\Fronton
+     * @ORM\ManyToOne(targetEntity="Fronton")
      */
     private $fronton;
 
@@ -110,4 +115,3 @@ class Opinion
         return $this->fronton;
     }
 }
-
