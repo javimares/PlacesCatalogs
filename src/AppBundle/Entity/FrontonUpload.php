@@ -12,9 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Catalogo_Fronton")
+ * @ORM\Table(name="Catalogo_FrontonUpload")
  */
-class Fronton
+class FrontonUpload
 {
     /**
      * @ORM\Id
@@ -389,7 +389,7 @@ class Fronton
      *
      * @param integer $calif
      *
-     * @return Fronton
+     * @return FrontonUpload
      */
     public function setCalif($calif)
     {

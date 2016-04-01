@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Catalogo_Barrio")
+ * @ORM\Table(name="Catalogo_Temas")
  */
-class Barrio
+class Temas
 
 {
     /**
@@ -25,9 +25,9 @@ class Barrio
     protected $desc;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\ManyToOne(targetEntity="Usuario")
      */
-    protected $slug;
+    protected $user;
 
     /**
      * @return integer
@@ -62,19 +62,27 @@ class Barrio
     }
 
     /**
-     * @return string
+     * Set user
+     *
+     * @param \AppBundle\Entity\Usuario $user
+     *
+     * @return Temas
      */
-    public function getSlug()
+    public function setUser($user = null)
     {
-        return $this->slug;
+        $this->user = $user;
+    
+        return $this;
     }
 
     /**
-     * @param string $slug
+     * Get user
+     *
+     * @return \AppBundle\Entity\Usuario
      */
-    public function setSlug($slug)
+    public function getUser()
     {
-        $this->slug = $slug;
+        return $this->user;
     }
 
     /**

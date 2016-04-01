@@ -98,7 +98,7 @@ class Opinion
      *
      * @return Opinion
      */
-    public function setFronton(\AppBundle\Entity\Fronton $fronton = null)
+    public function setFronton($fronton = null)
     {
         $this->fronton = $fronton;
     
@@ -113,5 +113,13 @@ class Opinion
     public function getFronton()
     {
         return $this->fronton;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getBody();
     }
 }

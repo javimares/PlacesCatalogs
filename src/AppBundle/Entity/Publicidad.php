@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="Catalogo_Estado")
+ * @ORM\Table(name="Catalogo_Publicidad")
  */
-class Estado
+class Publicidad
 
 {
     /**
@@ -22,30 +22,30 @@ class Estado
     /**
      * @ORM\Column(type="string", length=100)
      */
-    protected $desc;
+    protected $banner;
 
     /**
-     * Set desc
+     * Set banner
      *
-     * @param string $desc
+     * @param string $banner
      *
      * @return Estado
      */
-    public function setDesc($desc)
+    public function setBanner($banner)
     {
-        $this->desc = $desc;
+        $this->banner = $banner;
     
         return $this;
     }
 
     /**
-     * Get desc
+     * Get banner
      *
      * @return string
      */
-    public function getDesc()
+    public function getBanner()
     {
-        return $this->desc;
+        return $this->banner;
     }
 
     /**
@@ -63,6 +63,6 @@ class Estado
      */
     public function __toString()
     {
-        return $this->getDesc();
+        return $this->getBanner();
     }
 }
